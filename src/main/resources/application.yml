@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    url: jdbc:mysql://127.0.0.1:3306/mybatis
+    username: root
+    password: example
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    
+#   port: 9090
+#   servlet:
+#     context-path: /start
