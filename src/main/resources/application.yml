@@ -5,6 +5,9 @@ spring:
     password: example
     driver-class-name: com.mysql.cj.jdbc.Driver
     
+mybatis:
+  mapper-locations: /mapper/*.xml
+   
 #   port: 9090
 #   servlet:
 #     context-path: /start
