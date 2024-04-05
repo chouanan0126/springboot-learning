@@ -18,8 +18,14 @@
         <result column="age" property="age"/>
         <result column="gender" property="gender"/>
         <result column="phone" property="phone"/>
+            <collection property="id" ofType="com.example.demo.entity.Order">
+            <id column="id" property="id"/>
+            <result column="user_id" property="userId"/>
+            <result column="order_date" property="orderDate" jdbcType="TIMESTAMP"/>
+            <result column="total_amount" property="totalAmount"/>
+            <result column="order_status" property="orderStatus"/>
+            </collection>
     </resultMap>
-
 
 
     <select id="insertUser">
