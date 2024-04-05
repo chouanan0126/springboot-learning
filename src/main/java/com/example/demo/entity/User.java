@@ -3,23 +3,17 @@ package com.example.demo.entity;
 import java.util.List;
 
 public class User {
-    
+
     private Integer id;
     private String name;
     private Short age;
     private Short gender;
     private String phone;
-    
+
     private List<Order> orders;
-    
-    public List<Order> getOrders() {
-		return orders;
-	}
+
     public User() {
     }
-    public void setOrders(List<Order> orders) {
-		this.orders = orders;
-	}
 
     public User(Integer id, String name, Short age, Short gender, String phone) {
         this.id = id;
@@ -27,6 +21,14 @@ public class User {
         this.age = age;
         this.gender = gender;
         this.phone = phone;
+    }
+
+    public List<Order> getOrders() {
+        return orders;
+    }
+
+    public void setOrders(List<Order> orders) {
+        this.orders = orders;
     }
 
     public Integer getId() {

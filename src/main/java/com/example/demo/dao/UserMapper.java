@@ -1,20 +1,20 @@
 package com.example.demo.dao;
-import java.util.List;
-
-import org.apache.ibatis.annotations.Mapper;
 
 import com.example.demo.entity.User;
+import org.apache.ibatis.annotations.Mapper;
+
+import java.util.List;
 
 @Mapper
 public interface UserMapper {
-   
-    public User getUserById(Integer id);
 
-    public List<User> findAllUsers();
-    
-    public void insertUser(User user);
+    User getUserById(Integer id);
 
-     public void updateUser(User user);
+    List<User> findAllUsers();
 
-     public void deleteUser(Integer id);
+    void insertUser(User user);
+
+    void updateUser(User user);
+
+    void deleteUser(Integer id);
 }
