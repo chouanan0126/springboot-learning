@@ -14,16 +14,18 @@ public class Order {
     private Byte orderStatus;
 
     private User user;
+    private OrderItem orderItem;
 
     public Order() {
     }
 
-    public Order(Integer id, Integer userId, Timestamp orderDate, Double totalAmount, Byte orderStatus, User user) {
+    public Order(Integer id, Integer userId, Timestamp orderDate, Double totalAmount, Byte orderStatus, User user,OrderItem orderItem) {
         this.id = id;
         this.userId = userId;
         this.orderDate = orderDate;
         this.totalAmount = totalAmount;
         this.orderStatus = orderStatus;
         this.user = user;
+        this.orderItem = orderItem;
     }
 }

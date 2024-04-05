@@ -7,10 +7,21 @@
         FROM user
         WHERE id = #{id}
     </select>
-    <select id="findAllUsers" resultType="com.example.demo.entity.User">
+    <select id="findAllUsers" resultMap="UserWithOrderResultMap">
         SELECT *
         FROM user
+        INNER JOIN user_order ON user.id = user_order.user_id
     </select>
+    <resultMap type="com.example.demo.entity.User" id="UserWithOrderResultMap">
+        <id column="id" property="id"/>
+        <result column="name" property="name"/>
+        <result column="age" property="age"/>
+        <result column="gender" property="gender"/>
+        <result column="phone" property="phone"/>
+    </resultMap>
+
+
+
     <select id="insertUser">
         INSERT INTO user (name, age, gender, phone)
         VALUES (#{name}, #{age}, #{gender}, #{phone})
