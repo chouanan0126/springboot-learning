@@ -1,5 +1,7 @@
 package com.example.demo.entity;
 
+import java.util.List;
+
 public class User {
     
     private Integer id;
@@ -7,9 +9,17 @@ public class User {
     private Short age;
     private Short gender;
     private String phone;
-
+    
+    private List<Order> orders;
+    
+    public List<Order> getOrders() {
+		return orders;
+	}
     public User() {
     }
+    public void setOrders(List<Order> orders) {
+		this.orders = orders;
+	}
 
     public User(Integer id, String name, Short age, Short gender, String phone) {
         this.id = id;
