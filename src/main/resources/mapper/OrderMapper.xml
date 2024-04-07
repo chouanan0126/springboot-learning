@@ -13,12 +13,12 @@
         <result column="order_date" property="orderDate" jdbcType="TIMESTAMP"/>
         <result column="total_amount" property="totalAmount"/>
         <result column="order_status" property="orderStatus"/>
-        <association property="user" javaType="com.example.demo.entity.User">
+        <collection property="user" ofType="com.example.demo.entity.User">
             <id column="id" property="id"/>
             <result column="name" property="name"/>
             <result column="age" property="age"/>
             <result column="gender" property="gender"/>
             <result column="phone" property="phone"/>
-        </association>
+        </collection>
     </resultMap>
 </mapper>
