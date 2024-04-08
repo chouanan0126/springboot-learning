@@ -3,9 +3,10 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.demo.dao.OrderMapper">
     <select id="findAllOrders" resultMap="OrderWithUserResultMap">
-        SELECT *
+        SELECT user_order.*,user.name,order_item.*
         FROM user_order
                  LEFT JOIN user ON user_order.user_id = user.id
+        LEFT JOIN order_item ON user_order.id = order_item.order_id
     </select>
     <resultMap type="com.example.demo.entity.Order" id="OrderWithUserResultMap">
         <id column="id" property="id"/>
@@ -16,9 +17,15 @@
         <collection property="user" ofType="com.example.demo.entity.User">
             <id column="id" property="id"/>
             <result column="name" property="name"/>
-            <result column="age" property="age"/>
-            <result column="gender" property="gender"/>
-            <result column="phone" property="phone"/>
+<!--            <result column="age" property="age"/>-->
+<!--            <result column="gender" property="gender"/>-->
+<!--            <result column="phone" property="phone"/>-->
+        </collection>
+        <collection property="orderItem" ofType="com.example.demo.entity.OrderItem">
+            <id column="order_item_id" property="orderItemId" />
+            <result column="product_id" property="productId" />
+            <result column="order_id" property="orderId" />
+            <result column="quantity" property="quantity" />
         </collection>
     </resultMap>
 </mapper>
