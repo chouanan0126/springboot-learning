@@ -1,9 +1,9 @@
-package com.example.demo.service.impl;
+package com.example.mybatis_generator.service.impl;
 
-import com.example.demo.dao.UserMapper;
-import com.example.demo.entity.User;
-import com.example.demo.entity.UserExample;
-import com.example.demo.service.UserService;
+import com.example.mybatis_generator.dao.UserMapper;
+import com.example.mybatis_generator.entity.User;
+import com.example.mybatis_generator.entity.UserExample;
+import com.example.mybatis_generator.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,10 +16,7 @@ public class UserServiceImpl implements UserService {
 
     @Override
     public User getUserById(Integer id) {
-        UserExample example = new UserExample();
-        example.createCriteria().andIdEqualTo(id);
-        List<User> userList = userMapper.selectByExample(example);
-        return userList.isEmpty() ? null : userList.get(0);
+        return userMapper.selectByPrimaryKey(id);
     }
 
     @Override

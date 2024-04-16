@@ -1,6 +1,6 @@
-package com.example.demo.service;
+package com.example.mybatis_generator.service;
 
-import com.example.demo.entity.User;
+import com.example.mybatis_generator.entity.User;
 
 import java.util.List;
 
